@@ -8,14 +8,57 @@
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.codecrafter.indie</groupId>
 	<artifactId>theguardiangate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>theguardiangate</name>
-	<description>Demo project for Spring Boot</description>
+
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>"The Guardian Gate" is a streamlined Java library for seamless integration with
+		The Guardian's API, enabling quick access to news data with minimal coding</description>
+	<url>https://github.com/NewsIndieApp/theguardiangate</url>
+
+	<!-- MIT License -->
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<!-- SCM Information -->
+	<scm>
+		<connection>scm:git:git://github.com/NewsIndieApp/theguardiangate.git</connection>
+		<developerConnection>scm:git:ssh://github.com:NewsIndieApp/theguardiangate.git</developerConnection>
+		<url>https://github.com/NewsIndieApp/theguardiangate</url>
+	</scm>
+
+	<!-- Authors -->
+	<developers>
+		<developer>
+			<name>Purple Coww</name>
+			<email>denisbundev98@gmail.com</email>
+			<organization>com.github.PurpleCoww</organization>
+			<organizationUrl>https://github.com/PurpleCoww</organizationUrl>
+		</developer>
+	</developers>
+
+	<!-- OSSRH Distribution Management and Authentication -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -35,6 +78,19 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${project.parent.version}</version>
+			</plugin>
+
+			<!-- OSSRH Distribution Management and Authentication -->
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
