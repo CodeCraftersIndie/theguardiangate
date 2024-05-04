@@ -17,7 +17,7 @@ import com.codecrafter.indie.theguardiangate.service.GuardianService;
 import com.codecrafter.indie.theguardiangate.utils.ResponseHelper;
 
 @RestController
-@RequestMapping(path = "/fornitura")
+@RequestMapping(path = "/guardian")
 @Validated
 public class GuardianController {
 	
