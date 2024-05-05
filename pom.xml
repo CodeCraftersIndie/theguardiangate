@@ -11,7 +11,7 @@
 
 	<groupId>com.codecrafter.indie</groupId>
 	<artifactId>theguardiangate</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>"The Guardian Gate" is a streamlined Java library for seamless integration with
@@ -84,15 +84,27 @@
 			<artifactId>activation</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
+		<finalName>theguardiangate</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${project.parent.version}</version>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.springframework.boot</groupId>-->
+<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--				<version>${project.parent.version}</version>-->
+<!--			</plugin>-->
 
 			<!-- OSSRH Distribution Management and Authentication -->
 			<!-- Nexus Staging Maven Plugin for Deployment and Release -->
